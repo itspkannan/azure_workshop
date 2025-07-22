@@ -42,26 +42,8 @@ module "load_balancer" {
   subnet_id           = module.networking.subnet_lb_id
 }
 
-module "roles" {
-  source            = "./modules/roles"
-  resource_group_id = azurerm_resource_group.main.id
-}
-
-# ----------------------
-# Outputs
-# ----------------------
-output "resource_group_name" {
-  value = azurerm_resource_group.main.name
-}
-
-output "resource_group_location" {
-  value = azurerm_resource_group.main.location
-}
-
-output "public_subnet_id" {
-  value = module.networking.subnet_lb_id
-}
-
-output "private_subnet_id" {
-  value = module.networking.subnet_app_id
-}
+# Skpping roles for now
+#module "roles" {
+#  source            = "./modules/roles"
+#  resource_group_id = azurerm_resource_group.main.id
+#}

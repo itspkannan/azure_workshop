@@ -26,10 +26,4 @@ resource "azurerm_subnet" "subnet_app" {
   address_prefixes     = ["10.1.1.0/24"]
 }
 
-output "subnet_lb_id" {
-  value = azurerm_subnet.subnet_lb.id
-}
 
-output "subnet_app_id" {
-  value = azurerm_subnet.subnet_app.id
-}

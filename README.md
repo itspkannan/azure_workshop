@@ -27,4 +27,10 @@ Available commands:
   terraform.plan        🔍 Terraform Plan
   terraform.show        📜 Terraform Show
 
-  ```bash
+  ```
+
+  ### Create Infrastructure for Microservice Deployment
+
+  [Infra](INSTALL.md)
+
+  

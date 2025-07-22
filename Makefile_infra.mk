@@ -39,11 +39,12 @@ terraform.fmt: ## 🧹 Terraform Format
 .PHONY: terraform.show
 terraform.show: ## 📜 Terraform Show
 	@echo "[INFO]📜 Terraform Show"
-	$(TF_DOCKER_RUN) show
+	$(TF_DOCKER_RUN) show -json | jq .
+
 
 .PHONY: terraform.output
 terraform.output:  ## 📜 Terraform Output
-	@echo "[INFO] 📦 Terraform Outputs"
+	@echo "[INFO] 📦 Terraform Outputs" 
 	$(TF_DOCKER_RUN) output
 
 

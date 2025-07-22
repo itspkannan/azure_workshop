@@ -46,7 +46,7 @@ az.assign.role: ## 🧾 Assign custom role to Azure user
 ifeq ($(strip $(SUBSCRIPTION_ID)),)
 	$(error ERROR: No active Azure subscription found. Please run `az login`)
 endif
-	@echo "🔐 Assigning role '$(CUSTOM_ROLE)' to user: $(USER_UPN)"
+	@echo "[INFO] 🔐 Assigning role '$(CUSTOM_ROLE)' to user: $(USER_UPN)"
 	@az role assignment create \
 		--assignee $(USER_UPN) \
 		--role "$(CUSTOM_ROLE)" \
@@ -55,6 +55,6 @@ endif
 
 .PHONY: az.delete.role
 az.delete.role: ## 🗑️ Delete the custom Azure role
-	@echo "🗑️ Deleting role 'Limited Infra Deployer'..."
+	@echo "[INFO] 🗑️ Deleting role 'Limited Infra Deployer'..."
 	@az role definition delete --name "Limited Infra Deployer"
-	@echo "✅ Role deleted."
+	@echo "[INFO] ✅ Role deleted."

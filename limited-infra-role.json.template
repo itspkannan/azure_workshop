@@ -1,0 +1,20 @@
+{
+  "Name": "Limited Infra Deployer",
+  "IsCustom": true,
+  "Description": "Can create VMs, networks, LBs, and manage limited roles",
+  "Actions": [
+    "Microsoft.Compute/*/read",
+    "Microsoft.Compute/virtualMachines/*",
+    "Microsoft.Network/*",
+    "Microsoft.Authorization/roleAssignments/read",
+    "Microsoft.Authorization/roleAssignments/write",
+    "Microsoft.Authorization/roleDefinitions/read"
+  ],
+  "NotActions": [
+    "Microsoft.Authorization/roleAssignments/delete",
+    "Microsoft.Authorization/*/delete"
+  ],
+  "AssignableScopes": [
+    "/subscriptions/REPLACE_SUBSCRIPTION_ID"
+  ]
+}

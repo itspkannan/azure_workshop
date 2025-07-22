@@ -47,3 +47,14 @@ module "load_balancer" {
 #  source            = "./modules/roles"
 #  resource_group_id = azurerm_resource_group.main.id
 #}
+
+
+module "vm_nginx" {
+  source              = "./modules/vm_nginx"
+  vm_name             = "vm-nginx"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.main.name
+  subnet_id           = module.networking.subnet_ids["private"]
+  admin_username      = "azureuser"
+  ssh_public_key      = file("~/.ssh/id_rsa.pub")
+}

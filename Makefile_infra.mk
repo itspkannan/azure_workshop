@@ -2,6 +2,7 @@ TF_DIR=./terraform
 define TF_DOCKER_RUN
 docker run --rm \
 	--env-file .env \
+	-v $(HOME)/.ssh:/root/.ssh  \
 	-v $(PWD)/$(TF_DIR):/workspace -w /workspace \
 	hashicorp/terraform:1.8
 endef
@@ -48,4 +49,7 @@ terraform.output:  ## 📜 Terraform Output
 	$(TF_DOCKER_RUN) output
 
 
-
+.PHONY: terraform.refresh
+terraform.refresh:  ## 📜 Terraform refresh
+	@echo "[INFO] 📦 Terraform refresh" 
+	$(TF_DOCKER_RUN) refresh

@@ -13,3 +13,11 @@ output "subnet_lb_id" {
 output "subnet_app_id" {
   value = azurerm_subnet.subnet_app.id
 }
+
+output "subnet_ids" {
+  value = {
+    private = azurerm_subnet.private_subnet.id
+    public  = azurerm_subnet.public_subnet.id
+  }
+}
+

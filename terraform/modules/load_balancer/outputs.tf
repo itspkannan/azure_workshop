@@ -25,3 +25,7 @@ output "backend_pool_id" {
 output "lb_rule_id" {
   value = azurerm_lb_rule.http.id
 }
+
+output "lb_probe_id" {
+  value = azurerm_lb_probe.app_health_probe.id
+}
